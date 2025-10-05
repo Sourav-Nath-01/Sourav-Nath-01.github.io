@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jigsaw Puzzle Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧩 Jigsaw Puzzle Maker</h1>
+
+    <div id="controls">
+      <label class="upload-label" id="uploadLabel">
+        Upload Image
+        <input type="file" id="imageUpload" accept="image/*" hidden>
+      </label>
+
+      <div class="difficulty-wrapper">
+        <select id="difficulty">
+          <option value="5">5 pieces</option>
+          <option value="20">20 pieces</option>
+          <option value="40">40 pieces</option>
+          <option value="80">80 pieces</option>
+          <option value="100">100 pieces</option>
+        </select>
+        <p id="difficulty-label">Difficulty: 5 pieces</p>
+      </div>
+
+      <div class="btn-row">
+        <button id="startBtn">Start Puzzle</button>
+        <button id="restartBtn" disabled>Restart</button>
+      </div>
+    </div>
+
+    <div id="status">
+      <span id="moves">Moves: 0</span> | 
+      <span id="timer">Time: 0s</span>
+    </div>
+
+    <div id="puzzle-container"></div>
+  </div>
+
+  <!-- Win Message -->
+  <div id="win-overlay">
+    <div class="win-box">
+      <h2>🎉 Puzzle Completed!</h2>
+      <p id="final-stats"></p>
+      <button onclick="closeWin()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
